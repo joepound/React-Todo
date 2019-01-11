@@ -1,0 +1,200 @@
+@import '../../variables.css';
+
+/* Animations */
+
+@keyframes transluscent-fade-out{
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.25;
+    }
+}
+
+@keyframes transluscent-fade-in{
+    0% {
+        opacity: 0.25;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Overall Todo list styles */
+
+.todos-completed{
+    display: block;
+    text-align: center;
+    font-size: 2.4rem;
+    font-weight: bold;
+    margin: 10px auto 37.5px;
+}
+
+.todo-search {
+    display: block;
+    width: 20%;
+    padding: 5px 1%;
+    margin: 10px auto 20px;
+}
+
+.todo-remove-completed-btn {
+    display: block;
+    padding: 10px 5%;
+    margin: 10px auto;
+}
+
+.todo-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin: 37.5px auto;
+}
+
+/* Individual Todo list item styles*/
+
+.todo-item, .todo-item-done {
+    width: 25%;
+    margin: 20px 2.5%;
+}
+
+.todo-item:hover, .todo-item-done:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition-duration: 500ms;
+    transition-property: all;
+}
+
+.todo-item {
+    animation: transluscent-fade-in 0.5s;
+}
+
+.todo-item-done {
+    position: relative;
+    opacity: 0.25;
+    animation: transluscent-fade-out 0.5s;
+}
+
+.todo-item-done:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -18.75%;
+    background-color: var(--todo-item-line-through-color);
+    width: 137.5%;
+    height: 2.5px;
+    transform: rotate(30deg);
+}
+
+.todo-item-text {
+    overflow: auto;
+    height: 250px;
+    padding: 10px;
+    border: 5px double var(--todo-item-border-color);
+}
+
+.todo-item-header {
+    font-size: 2.4rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.todo-item-date {
+    font-size: 1.4rem;
+    color: var(--todo-item-date-font-color);
+    margin: 5px 0 15px;
+}
+
+.todo-item-details, .todo-item-details-done {
+    margin-bottom: 50px;
+}
+
+.todo-item-details-done {
+    text-decoration: line-through;
+}
+
+.todo-item-complete-btn {
+    display: block;
+    padding: 10px 5%;
+    margin: 10px 0 0 auto;
+}
+
+/* Todo form styles */
+
+.todo-form {
+    width: 50%;
+    margin: 50px auto;
+}
+
+.todo-form-header {
+    font-size: 2.4rem;
+    font-weight: bold;
+}
+
+.todo-form-container {
+    width: 100%;
+}
+
+.todo-form-input {
+    width: 100%;
+    height: 150px;
+    margin: 20px 0;
+}
+
+.todo-add-button {
+    display: block;
+    padding: 10px 5%;
+    margin-left: auto;
+}
+
+@media (max-width: 800px) {
+    /* Overall Todo list styles */
+
+    .todo-search {
+        width: 37.5%;
+    }
+
+    .todo-remove-completed-btn {
+        width: 45%;
+    }
+
+    /* Individual Todo list item styles*/
+
+    .todo-item, .todo-item-done {
+        width: 40%;
+        margin: 20px 3.75%;
+    }
+
+    /* Todo form styles */
+    
+    .todo-form {
+        width: 87.5%;
+    }
+}
+
+@media (max-width: 500px) {
+    /* Overall Todo list styles */
+
+    .todo-search {
+        width: 50%;
+    }
+
+    .todo-remove-completed-btn {
+        width: 62.5%;
+    }
+
+    /* Individual Todo list item styles*/
+
+    .todo-item, .todo-item-done {
+        width: 80%;
+        margin: 20px 0;
+    }
+
+    /* Todo form styles */
+    
+    .todo-form {
+        width: 87.5%;
+    }
+}

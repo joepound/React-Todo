@@ -14,7 +14,7 @@ const TodoList = props => {
         className="todo-search" 
         type="search" 
         placeholder="Search for todos...." 
-        name="todo-search" 
+        name="searchQuery" 
         onChange={props.handleChange}/>
       <button 
         className="todo-remove-completed-btn" 

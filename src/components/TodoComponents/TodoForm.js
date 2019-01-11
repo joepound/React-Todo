@@ -10,7 +10,7 @@ const TodoForm = props => {
         <textarea 
           className="todo-form-input" 
           placeholder="Enter a task to do...." 
-          name="new-todo-textarea" 
+          name="currentTodoInput" 
           onKeyDown={props.handleKeyDown} 
           onChange={props.handleChange}>
           {props.currentTodoInput}

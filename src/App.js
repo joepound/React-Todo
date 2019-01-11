@@ -97,7 +97,7 @@ class App extends React.Component {
 
       const input = e.currentTarget.name;
       switch(input) {
-        case 'new-todo-textarea' :
+        case 'currentTodoInput' :
           this.addTodo(e)
           break;
       }
@@ -106,11 +106,11 @@ class App extends React.Component {
 
   handleChange(e) {
     const input = e.currentTarget.name;
+
+    this.setState({[input]: e.currentTarget.value});
+
     switch(input) {
-      case 'new-todo-textarea' :
-        this.setState({currentTodoInput: e.currentTarget.value});
-        break;
-      case 'todo-search' :
+      case 'searchQuery' :
         this.searchTodos(e.currentTarget.value);
         break;
     }
